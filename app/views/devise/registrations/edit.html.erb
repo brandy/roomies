@@ -5,20 +5,17 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="mb-3">
-      <% if f.object.persisted? %>
-        <div class="mb-2">
-          <%= image_tag f.object.image_url, class: "img-fluid rounded-circle", style: "max-height: 256px;" %>
-        </div>
-      <% end %>
+      <%= image_tag(resource.avatar_thumbnail, class: "img-fluid rounded-circle") if resource.avatar.attached? %>
+    </div>
 
-      <%= f.label :image, class: "form-label" %>
-      <%= f.hidden_field :image, value: f.object.cached_image_data %>
-      <%= f.file_field :image, class: "form-control" %>
+    <div class="mb-3">
+      <%= f.label :avatar, class: "form-label" %>
+      <%= f.file_field :avatar, class: "form-control" %>
     </div>
 
     <div class="mb-3">
       <%= f.label :name, class: "form-label" %><br/>
-      <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
+      <%= f.text_field :name, autocomplete: "name", class: "form-control" %>
     </div>
 
     <div class="mb-3">
