@@ -58,3 +58,9 @@ gem "shrine", "~> 3.4"
 gem "name_of_person", "~> 1.1"
 
 gem "meta-tags", "~> 2.16"
+
+gem "image_processing", "~> 1.12"
+
+gem "marcel", "~> 1.0"
+
+gem "fastimage", "~> 2.2"

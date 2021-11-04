@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :profiles
   devise_for :users
+
+  resources :profiles
 
   get 'static/home', to: "static#home", as: :home
 
