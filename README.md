@@ -1,24 +1,14 @@
-# README
+## Roomies
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The fastest, safest, and free way of finding your next roommate. Create your listing and get your search started today!
 
-Things you may want to cover:
+Clone of roomies.ca built on Ruby on Rails 6 - For educational purposes only.
 
-* Ruby version
+### Packages
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Users: https://github.com/heartcombo/devise
+- User's Name: https://github.com/basecamp/name_of_person
+- Tagging: https://github.com/mbleigh/acts-as-taggable-on
+- Image Uploading: https://github.com/shrinerb/shrine
+- User Last Seen (Old?): https://github.com/ctide/devise_lastseenable
+- Conversations (Old?): https://github.com/mailboxer/mailboxer

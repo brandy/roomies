@@ -19,7 +19,10 @@ default: &default
 
 development:
   <<: *default
+  host: localhost
   database: roomies_development
+  username: dev
+  password: dev
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
