@@ -10,7 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_04_014513) do
+ActiveRecord::Schema.define(version: 2021_11_04_074319) do
+
+  create_table "profiles", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "looking_for"
+    t.integer "age"
+    t.string "gender"
+    t.integer "budget"
+    t.date "move_in_data"
+    t.integer "stay_length"
+    t.string "occupation"
+    t.string "children"
+    t.boolean "is_non_smoker"
+    t.boolean "is_cat"
+    t.boolean "is_dog"
+    t.boolean "is_student"
+    t.boolean "is_lgbt"
+    t.boolean "is_cannabis"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
 
   create_table "taggings", id: :integer, charset: "utf8mb4", force: :cascade do |t|
     t.integer "tag_id"
@@ -55,5 +77,6 @@ ActiveRecord::Schema.define(version: 2021_11_04_014513) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "profiles", "users"
   add_foreign_key "taggings", "tags"
 end

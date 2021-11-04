@@ -1,0 +1,97 @@
+<%= form_with(model: profile) do |form| %>
+  <% if profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+        <% profile.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :looking_for %>
+    <%= form.text_field :looking_for %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age %>
+    <%= form.number_field :age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.text_field :gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :budget %>
+    <%= form.number_field :budget %>
+  </div>
+
+  <div class="field">
+    <%= form.label :move_in_data %>
+    <%= form.date_select :move_in_data %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stay_length %>
+    <%= form.number_field :stay_length %>
+  </div>
+
+  <div class="field">
+    <%= form.label :occupation %>
+    <%= form.text_field :occupation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :children %>
+    <%= form.text_field :children %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_non_smoker %>
+    <%= form.check_box :is_non_smoker %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_cat %>
+    <%= form.check_box :is_cat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_dog %>
+    <%= form.check_box :is_dog %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_student %>
+    <%= form.check_box :is_student %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_lgbt %>
+    <%= form.check_box :is_lgbt %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_cannabis %>
+    <%= form.check_box :is_cannabis %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

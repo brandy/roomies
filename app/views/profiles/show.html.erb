@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @profile.user_id %>
+</p>
+
+<p>
+  <strong>Looking for:</strong>
+  <%= @profile.looking_for %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @profile.age %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @profile.gender %>
+</p>
+
+<p>
+  <strong>Budget:</strong>
+  <%= @profile.budget %>
+</p>
+
+<p>
+  <strong>Move in data:</strong>
+  <%= @profile.move_in_data %>
+</p>
+
+<p>
+  <strong>Stay length:</strong>
+  <%= @profile.stay_length %>
+</p>
+
+<p>
+  <strong>Occupation:</strong>
+  <%= @profile.occupation %>
+</p>
+
+<p>
+  <strong>Children:</strong>
+  <%= @profile.children %>
+</p>
+
+<p>
+  <strong>Is non smoker:</strong>
+  <%= @profile.is_non_smoker %>
+</p>
+
+<p>
+  <strong>Is cat:</strong>
+  <%= @profile.is_cat %>
+</p>
+
+<p>
+  <strong>Is dog:</strong>
+  <%= @profile.is_dog %>
+</p>
+
+<p>
+  <strong>Is student:</strong>
+  <%= @profile.is_student %>
+</p>
+
+<p>
+  <strong>Is lgbt:</strong>
+  <%= @profile.is_lgbt %>
+</p>
+
+<p>
+  <strong>Is cannabis:</strong>
+  <%= @profile.is_cannabis %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @profile.description %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>
