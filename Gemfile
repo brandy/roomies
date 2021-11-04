@@ -56,3 +56,5 @@ gem "devise", "~> 4.8"
 gem "acts-as-taggable-on", "~> 8.1"
 gem "shrine", "~> 3.4"
 gem "name_of_person", "~> 1.1"
+
+gem "meta-tags", "~> 2.16"
