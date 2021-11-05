@@ -1,9 +1,12 @@
 class MessagesController < ApplicationController
+  before_action :authenticate_user!
   before_action do
+    # todo: Move to private function
     @conversation = Conversation.find(params[:conversation_id])
   end
 
   def index
+    # todo: add pagination instead
     @messages = @conversation.messages
     if @messages.length > 10
       @over_ten = true
@@ -22,6 +25,13 @@ class MessagesController < ApplicationController
     end
 
     @message = @conversation.messages.new
+
+    # Get recipient to display info on page
+    if @message.conversation.sender_id == current_user.id
+      @recipient = User.find(@message.conversation.recipient_id)
+    else
+      @recipient = User.find(@message.conversation.sender_id)
+    end
   end
 
   def new
@@ -30,6 +40,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = @conversation.messages.new(message_params)
+
     if @message.save
       redirect_to conversation_messages_path(@conversation)
     end

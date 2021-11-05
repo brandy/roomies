@@ -24,7 +24,7 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <%= image_tag(current_user.avatar_thumbnail, class: "img-fluid rounded-circle", style: "max-height: 25px;") %>
+                <%= image_tag(current_user.avatar_thumbnail, class: "img-fluid rounded-circle", width: "25", height: "25") %>
                 <%= current_user.first_name %>
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

@@ -1,14 +1,8 @@
 <div class="container">
   <div class="d-flex justify-content-between align-items-center mt-3 mb-4">
-    <% if @message.conversation.sender_id == current_user.id %>
-      <% recipient = User.find(@message.conversation.recipient_id) %>
-    <% else %>
-      <% recipient = User.find(@message.conversation.sender_id) %>
-    <% end %>
+    <h1><%= @recipient.first_name %></h1>
 
-    <h1><%= recipient.first_name %></h1>
-
-    <%= link_to recipient.first_name + "'s Profile", root_path, class: "btn btn-primary text-white" %>
+    <%= link_to @recipient.first_name + "'s Profile", root_path, class: "btn btn-primary text-white" %>
   </div>
 
   <% if @over_ten %>
@@ -31,7 +25,7 @@
             <div class="ms-3 w-100">
               <div class="d-flex justify-content-between align-items-center">
                 <span><strong><%= user.first_name %></strong></span>
-                <span class="text-muted"><small><%= message.message_time %></small></span>
+                <span class="text-muted"><small><%= local_time_ago(message.created_at) %></small></span>
               </div>
               <%= message.body %>
             </div>

@@ -6,6 +6,7 @@
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
+import LocalTime from "local-time"
 import "channels"
 import "stylesheets/application"
 import "bootstrap"
@@ -13,7 +14,7 @@ import "bootstrap"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
+LocalTime.start()
 
 // document.addEventListener("turbolinks:load", () => {
 //     // const btn = document.querySelector("button.mobile-menu-button");

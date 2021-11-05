@@ -56,3 +56,5 @@ gem "devise", "~> 4.8"
 gem "acts-as-taggable-on", "~> 8.1"
 gem "name_of_person", "~> 1.1"
 gem "meta-tags", "~> 2.16"
+
+gem "local_time", "~> 2.1"
