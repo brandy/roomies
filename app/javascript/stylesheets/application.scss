@@ -1,16 +1,38 @@
+$primary: #f2545b;
+$text-color: black;
 @import "~bootstrap/scss/bootstrap";
 
-//a {
-//  text-decoration: none;
-//}
-//
-//a:hover,
-//a:focus {
-//  text-decoration: underline;
-//}
-//
-//
-//a.btn:hover,
-//a.btn:focus {
-//  text-decoration: none;
-//}
+.line-clamp-1, .line-clamp-3 {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  -webkit-line-clamp: 3;
+}
+
+.profile-card {
+  a {
+    color: $text-color;
+
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  .avatar {
+    max-width: 156px;
+    height: auto;
+    margin: 16px auto;
+
+    @extend .rounded-circle;
+  }
+
+  .card-body {
+    border-top: 2px solid $primary;
+  }
+}

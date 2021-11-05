@@ -1,0 +1,12 @@
+<div class="col col-md-4 col-lg-3">
+  <%= link_to profile, class: "card profile-card" do %>
+    <%= image_tag(profile.user.avatar_thumbnail, class: "avatar", width: "156", height: "156") %>
+
+    <div class="card-body">
+      <h5 class="card-title"><%= profile.user.name %></h5>
+      <p class="small"><%= profile.age %> years · <%= profile.gender %></p>
+      <p class="card-text line-clamp-3"><%= profile.description.truncate(153, separator: ' ') %></p>
+      <p class="small"><small>Roommate looking in: London</small></p>
+    </div>
+  <% end %>
+</div>

@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_profile, only: %i[ show edit update destroy ]
+  before_action :set_profile, only: %i[ edit update destroy ]
 
   # GET /profiles or /profiles.json
   def index
@@ -23,7 +23,7 @@ class ProfilesController < ApplicationController
 
   # POST /profiles or /profiles.json
   def create
-    @profile = Profile.new(profile_params)
+    @profile = current_user.profiles.new(profile_params)
 
     respond_to do |format|
       if @profile.save
