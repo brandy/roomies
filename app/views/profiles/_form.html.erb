@@ -11,82 +11,82 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :looking_for %>
-    <%= form.text_field :looking_for %>
+  <div class="mb-3">
+    <%= form.label :looking_for, class: "form-label" %>
+    <%= form.select :looking_for, options_for_select(Profile.looking_fors.map { |key, value| [key.humanize, Profile.looking_fors.key(value)] }, profile.looking_for), {}, { :class => 'form-select' } %>
   </div>
 
-  <div class="field">
-    <%= form.label :age %>
-    <%= form.number_field :age %>
+  <div class="mb-3">
+    <%= form.label :age, class: "form-label" %>
+    <%= form.number_field :age, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :gender %>
-    <%= form.text_field :gender %>
+  <div class="mb-3">
+    <%= form.label :gender, class: "form-label" %>
+    <%= form.select :gender, options_for_select(Profile.genders.map { |key, value| [key.humanize, Profile.genders.key(value)] }, profile.gender), {}, { :class => 'form-select' } %>
   </div>
 
-  <div class="field">
-    <%= form.label :budget %>
-    <%= form.number_field :budget %>
+  <div class="mb-3">
+    <%= form.label :budget, class: "form-label" %>
+    <%= form.number_field :budget, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :move_in_data %>
-    <%= form.date_select :move_in_data %>
+  <div class="mb-3">
+    <%= form.label :move_in_data, class: "form-label" %>
+    <%= form.date_select :move_in_data, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :stay_length %>
-    <%= form.number_field :stay_length %>
+  <div class="mb-3">
+    <%= form.label :stay_length, class: "form-label" %>
+    <%= form.number_field :stay_length, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :occupation %>
-    <%= form.text_field :occupation %>
+  <div class="mb-3">
+    <%= form.label :occupation, class: "form-label" %>
+    <%= form.text_field :occupation, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :children %>
-    <%= form.text_field :children %>
+  <div class="mb-3">
+    <%= form.label :children, class: "form-label" %>
+    <%= form.select :children, options_for_select(Profile.children.map { |key, value| [key.humanize, Profile.children.key(value)] }, profile.children), {}, { :class => 'form-select' } %>
   </div>
 
-  <div class="field">
-    <%= form.label :is_non_smoker %>
-    <%= form.check_box :is_non_smoker %>
+  <div class="form-check">
+    <%= form.check_box :is_non_smoker, class: "form-check-input" %>
+    <%= form.label :is_non_smoker, "🚭 Non-smoker", class: "form-check-label" %>
   </div>
 
-  <div class="field">
-    <%= form.label :is_cat %>
-    <%= form.check_box :is_cat %>
+  <div class="form-check">
+    <%= form.check_box :is_cat, class: "form-check-input" %>
+    <%= form.label :is_cat, "🐱 I have a cat", class: "form-label" %>
   </div>
 
-  <div class="field">
-    <%= form.label :is_dog %>
-    <%= form.check_box :is_dog %>
+  <div class="form-check">
+    <%= form.check_box :is_dog, class: "form-check-input" %>
+    <%= form.label :is_dog, "🐶 I have a dog", class: "form-label" %>
   </div>
 
-  <div class="field">
-    <%= form.label :is_student %>
-    <%= form.check_box :is_student %>
+  <div class="form-check">
+    <%= form.check_box :is_student, class: "form-check-input" %>
+    <%= form.label :is_student, "🎓 I'm a student", class: "form-label" %>
   </div>
 
-  <div class="field">
-    <%= form.label :is_lgbt %>
-    <%= form.check_box :is_lgbt %>
+  <div class="form-check">
+    <%= form.check_box :is_lgbt, class: "form-check-input" %>
+    <%= form.label :is_lgbt, "🏳️‍🌈 LGTBQ+ friendly", class: "form-label" %>
   </div>
 
-  <div class="field">
-    <%= form.label :is_cannabis %>
-    <%= form.check_box :is_cannabis %>
+  <div class="form-check">
+    <%= form.check_box :is_cannabis, class: "form-check-input" %>
+    <%= form.label :is_cannabis, "🌲 Cannabis friendly", class: "form-label" %>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  <div class="mb-3">
+    <%= form.label :description, class: "form-label" %>
+    <%= form.text_area :description, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit nil, class: "btn btn-primary text-white" %>
   </div>
 <% end %>

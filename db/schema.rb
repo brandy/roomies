@@ -42,14 +42,14 @@ ActiveRecord::Schema.define(version: 2021_11_04_202057) do
 
   create_table "profiles", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "looking_for"
+    t.integer "looking_for"
     t.integer "age"
-    t.string "gender"
+    t.integer "gender"
     t.integer "budget"
     t.date "move_in_data"
     t.integer "stay_length"
     t.string "occupation"
-    t.string "children"
+    t.integer "children"
     t.boolean "is_non_smoker"
     t.boolean "is_cat"
     t.boolean "is_dog"
@@ -101,7 +101,6 @@ ActiveRecord::Schema.define(version: 2021_11_04_202057) do
     t.string "last_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "image_data"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -1,96 +1,77 @@
 <div class="container">
-  <p id="notice"><%= notice %></p>
+  <div class="profile-page">
+    <div class="max-w-4xl mx-auto">
+      <div class="header bg-light p-5 text-center">
+        <%= image_tag(@profile.user.avatar_large, class: "avatar rounded-circle", width: "256", height: "256") %>
 
-  <div class="bg-light p-5 rounded">
-    <%= image_tag(@profile.user.avatar_large, class: "avatar", width: "256", height: "256") %>
+        <h1><%= @profile.user.name %></h1>
+        <p>
+          <%= @profile.gender.humanize %> ·
+          <%= @profile.age %> years ·
+          <%= @profile.occupation %>
+        </p>
 
-    <h1>Navbar example</h1>
-    <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
-    <a class="btn btn-lg btn-primary" href="/docs/5.1/components/navbar/" role="button">View navbar docs »</a>
+        <div class="header-actions">
+          <%= link_to 'Edit', edit_profile_path(@profile), class: "btn btn-secondary text-light" %>
+        </div>
+      </div>
+
+      <div class="my-4 max-w-lg mx-auto">
+        <div class="table-responsive">
+          <table class="table align-middle">
+            <tbody>
+            <tr>
+              <td>Budget</td>
+              <td>$<%= @profile.budget %> per month</td>
+            </tr>
+            <tr>
+              <td>Accommodation for</td>
+              <td><%= @profile.looking_for.humanize %></td>
+            </tr>
+            <tr>
+              <td>Ready to move</td>
+              <td><%= @profile.move_in_data %></td>
+              <!-- todo: Fix typo on move_in_date -->
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="my-3 max-w-lg mx-auto">
+        <div class="profile-badges">
+          <% if @profile.is_non_smoker %>
+            <span class="badge bg-light text-dark">🚭 Non-smoker</span>
+          <% end %>
+
+          <% if @profile.is_cat %>
+            <span class="badge bg-light text-dark">🐱 I have a cat</span>
+          <% end %>
+
+          <% if @profile.is_dog %>
+            <span class="badge bg-light text-dark">🐶 I have a dog</span>
+          <% end %>
+
+          <% if @profile.is_student %>
+            <span class="badge bg-light text-dark">🎓 I'm a student</span>
+          <% end %>
+
+          <% if @profile.is_lgbt %>
+            <span class="badge bg-light text-dark">🏳️‍🌈 LGTBQ+ friendly</span>
+          <% end %>
+
+          <% if @profile.is_cannabis %>
+            <span class="badge bg-light text-dark">🌲 Cannabis friendly</span>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="my-5 max-w-lg mx-auto">
+        <h2 class="h5">Description</h2>
+        <div class="profile-description">
+          <%= simple_format(@profile.description, {}, wrapper_tag: "p") %>
+        </div>
+      </div>
+    </div>
   </div>
-
-
-  <p>
-    <strong>User:</strong>
-    <%= @profile.user_id %>
-  </p>
-
-  <p>
-    <strong>Looking for:</strong>
-    <%= @profile.looking_for %>
-  </p>
-
-  <p>
-    <strong>Age:</strong>
-    <%= @profile.age %>
-  </p>
-
-  <p>
-    <strong>Gender:</strong>
-    <%= @profile.gender %>
-  </p>
-
-  <p>
-    <strong>Budget:</strong>
-    <%= @profile.budget %>
-  </p>
-
-  <p>
-    <strong>Move in data:</strong>
-    <%= @profile.move_in_data %>
-  </p>
-
-  <p>
-    <strong>Stay length:</strong>
-    <%= @profile.stay_length %>
-  </p>
-
-  <p>
-    <strong>Occupation:</strong>
-    <%= @profile.occupation %>
-  </p>
-
-  <p>
-    <strong>Children:</strong>
-    <%= @profile.children %>
-  </p>
-
-  <p>
-    <strong>Is non smoker:</strong>
-    <%= @profile.is_non_smoker %>
-  </p>
-
-  <p>
-    <strong>Is cat:</strong>
-    <%= @profile.is_cat %>
-  </p>
-
-  <p>
-    <strong>Is dog:</strong>
-    <%= @profile.is_dog %>
-  </p>
-
-  <p>
-    <strong>Is student:</strong>
-    <%= @profile.is_student %>
-  </p>
-
-  <p>
-    <strong>Is lgbt:</strong>
-    <%= @profile.is_lgbt %>
-  </p>
-
-  <p>
-    <strong>Is cannabis:</strong>
-    <%= @profile.is_cannabis %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= @profile.description %>
-  </p>
-
-  <%= link_to 'Edit', edit_profile_path(@profile) %> |
-  <%= link_to 'Back', profiles_path %>
-
 </div>
