@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_04_202057) do
+ActiveRecord::Schema.define(version: 2021_11_05_063341) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -40,13 +40,31 @@ ActiveRecord::Schema.define(version: 2021_11_04_202057) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "conversations", charset: "utf8mb4", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "recipient_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "messages", charset: "utf8mb4", force: :cascade do |t|
+    t.text "body"
+    t.bigint "conversation_id"
+    t.bigint "user_id"
+    t.boolean "read", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "profiles", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.integer "looking_for"
     t.integer "age"
     t.integer "gender"
     t.integer "budget"
-    t.date "move_in_data"
+    t.date "move_in_date"
     t.integer "stay_length"
     t.string "occupation"
     t.integer "children"

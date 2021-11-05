@@ -4,7 +4,7 @@
       <div class="header bg-light p-5 text-center">
         <%= image_tag(@profile.user.avatar_large, class: "avatar rounded-circle", width: "256", height: "256") %>
 
-        <h1><%= @profile.user.name %></h1>
+        <h1><%= @profile.user.first_name %></h1>
         <p>
           <%= @profile.gender.humanize %> ·
           <%= @profile.age %> years ·
@@ -12,7 +12,12 @@
         </p>
 
         <div class="header-actions">
-          <%= link_to 'Edit', edit_profile_path(@profile), class: "btn btn-secondary text-light" %>
+          <% if user_signed_in? && current_user.id != @profile.user.id %>
+            <%= link_to 'Message', conversations_path(sender_id: current_user.id, recipient_id: @profile.user.id), method: "post", class: "btn btn-primary text-light" %>
+          <% end %>
+          <% if user_signed_in? && current_user.id === @profile.user.id %>
+            <%= link_to 'Edit', edit_profile_path(@profile), class: "btn btn-secondary text-light" %>
+          <% end %>
         </div>
       </div>
 
@@ -30,8 +35,7 @@
             </tr>
             <tr>
               <td>Ready to move</td>
-              <td><%= @profile.move_in_data %></td>
-              <!-- todo: Fix typo on move_in_date -->
+              <td><%= @profile.move_in_date %></td>
             </tr>
             </tbody>
           </table>

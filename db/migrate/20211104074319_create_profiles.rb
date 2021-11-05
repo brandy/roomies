@@ -6,7 +6,7 @@ class CreateProfiles < ActiveRecord::Migration[6.1]
       t.integer :age
       t.integer :gender
       t.integer :budget
-      t.date :move_in_data
+      t.date :move_in_date
       t.integer :stay_length
       t.string :occupation
       t.integer :children

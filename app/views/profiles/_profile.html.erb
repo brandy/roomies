@@ -3,7 +3,7 @@
     <%= image_tag(profile.user.avatar_thumbnail, class: "avatar", width: "156", height: "156") %>
 
     <div class="card-body">
-      <h5 class="card-title"><%= profile.user.name %></h5>
+      <h5 class="card-title"><%= profile.user.first_name %></h5>
       <p class="small"><%= profile.age %> years · <%= profile.gender %></p>
       <p class="card-text line-clamp-3"><%= profile.description.truncate(153, separator: ' ') %></p>
       <p class="small"><small>Roommate looking in: London</small></p>

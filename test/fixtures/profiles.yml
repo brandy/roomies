@@ -6,7 +6,7 @@ one:
   age: 1
   gender: MyString
   budget: 1
-  move_in_data: 2021-11-04
+  move_in_date: 2021-11-04
   stay_length: 1
   occupation: MyString
   children: MyString
@@ -24,7 +24,7 @@ two:
   age: 1
   gender: MyString
   budget: 1
-  move_in_data: 2021-11-04
+  move_in_date: 2021-11-04
   stay_length: 1
   occupation: MyString
   children: MyString

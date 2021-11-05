@@ -26,7 +26,7 @@ class ProfilesTest < ApplicationSystemTestCase
     check "Is non smoker" if @profile.is_non_smoker
     check "Is student" if @profile.is_student
     fill_in "Looking for", with: @profile.looking_for
-    fill_in "Move in data", with: @profile.move_in_data
+    fill_in "Move in date", with: @profile.move_in_date
     fill_in "Occupation", with: @profile.occupation
     fill_in "Stay length", with: @profile.stay_length
     fill_in "User", with: @profile.user_id
@@ -52,7 +52,7 @@ class ProfilesTest < ApplicationSystemTestCase
     check "Is non smoker" if @profile.is_non_smoker
     check "Is student" if @profile.is_student
     fill_in "Looking for", with: @profile.looking_for
-    fill_in "Move in data", with: @profile.move_in_data
+    fill_in "Move in date", with: @profile.move_in_date
     fill_in "Occupation", with: @profile.occupation
     fill_in "Stay length", with: @profile.stay_length
     fill_in "User", with: @profile.user_id
