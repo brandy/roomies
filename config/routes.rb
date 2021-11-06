@@ -6,7 +6,8 @@ Rails.application.routes.draw do
     resources :messages
   end
 
-  get 'static/home', to: "static#home", as: :home
+  get 'home', to: "static#home", as: :home
+  get 'about', to: "static#about", as: :about
 
   root to: "static#home"
 end
